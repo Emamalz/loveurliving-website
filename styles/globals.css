@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  padding-top: 3.3rem; /* or whatever height you prefer */
+}
+
+/* — Base — */
+body {
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #333;
+}
+
+/* — Thin white nav bar — */
+.site-nav {
+  width: 100%;
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, transform 0.3s ease;
+}
+
+.nav-content {
+  max-width: 2100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.nav-logo {
+  object-fit: contain;
+  transition: height 0.3s ease;
+}
+
+.nav-links a {
+  margin-left: 2rem;
+  font-weight: 640;
+  color: #000;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: #C49E7F;
+  color: #fff;
+}
+
+/* after your .nav-links a { … } rule */
+
+.nav-links a.active {
+  @apply border-b-2 border-[#D4A373] pb-1;
+}
+
+.nav-links a.active {
+  border-bottom-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgba(212,163,115,var(--tw-border-opacity));
+  padding-bottom: 0.25rem;
+}
+
+.nav-links a:focus, .btn:focus {
+  outline: 2px solid #D4A373;
+  outline-offset: 2px;
+}
+ 
+/* — Hero section under the fixed nav — */
+.hero {
+  padding-top: calc(3rem);
+  background: url('/images/header.png') center/cover no-repeat;
+  height: calc(78vh - 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  z-index: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero h2 {
+  position: relative;
+  font-size: 3em;
+  margin: 0.5em 0;
+  z-index: 2;
+}
+
+.hero p {
+  position: relative;
+  font-size: 1.8em;
+  margin-bottom: 1.5em;
+  z-index: 2;
+}
+
+.btn {
+  position: relative;
+  background-color: #D4A373;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 2;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #C49E7F;
+}
+
+/* — Sections — */
+.section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.section h3 {
+  font-size: 2em;
+  margin-bottom: 50px;
+}
+
+/* — Services Icons / Cards — */
+.services-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  text-align: center;
+}
+.services-icons i {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Service cards grid (if using grid) */
+.service-card img {
+  @apply w-full h-48 object-cover;
+}
+
+/* — Gallery — */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+.gallery-grid img {
+  width: 300%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* — Contact Form — */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: auto;
+}
+form input,
+form textarea {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+form button {
+  background: #D4A373;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.contact-links {
+  text-align: center;
+  margin-top: 20px;
+}
+.contact-links a {
+  margin: 0 10px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* — Footer — */
+footer {
+  background: #f8f8f0;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 20px;
+}
+
+/* — Responsive — */
+@media screen and (max-width: 768px) {
+  .hero h2 {
+    font-size: 1.8em;
+  }
+  .hero p {
+    font-size: 1em;
+  }
+  .nav-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav-links a {
+    margin-left: 0.75rem;
+  }
+}
+
