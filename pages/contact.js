@@ -35,7 +35,7 @@ export default function ContactPage() {
       </Head>
       <Header />
 
-      <main className="flex-grow mt-16 px-4">
+      <main className="max-w-6xl mx-auto px-6 py-16 pt-32">
         <h3 className="text-4xl font-semibold text-center mb-8 uppercase tracking-wide">
           Contact Us
         </h3>
