@@ -1,6 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* Gold brand dots */
+.slick-dots li button:before {
+  color: #D4A373 !important;
+}
+.slick-dots li.slick-active button:before {
+  color: #C49E7F !important;
+}
 
 html { scroll-behavior: smooth; }
 

@@ -30,14 +30,16 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" legacyBehavior>
           <a>
-            <img
-              src="/images/logo.png"
-              srcSet="/images/logo.png 1x, /images/logo@2x.png 2x"
-              alt="Love Ur Living Logo"
-              className={`object-contain transition-all duration-300 ${
-                atTop ? "h-20 md:h-24 w-auto" : "h-14 md:h-16 w-auto"
-              }`}
-            />
+          <img
+        src="/images/logo.png"
+        srcSet="/images/logo.png 1x, /images/logo@2x.png 2x"
+        alt="Love Ur Living Logo"
+        className={`object-contain transition-all duration-300 w-auto ${
+        atTop ? "h-14 sm:h-16 md:h-20" : "h-12 sm:h-14 md:h-16"
+      }`}
+  />
+
+
           </a>
         </Link>
 
